@@ -1,33 +1,28 @@
 Name:		consul-utils
-Version:	0.1.1
-Release:	2%{?dist}
+Version:	0.1.0
+Release:	1%{?dist}
 Summary:	Command line tools for Consul
 
-%global consulkv_version 0.1.1
-%global consulacl_version 0.1.1
+%global consul_cli_version 0.1.0
 
 Group:		Applications/System
 License:	ASL 2.0
-Source0:	https://github.com/CiscoCloud/consulacl/releases/download/v%{consulacl_version}/consulacl_%{consulacl_version}_linux_amd64.tar.gz
-Source1:	https://github.com/CiscoCloud/consulkv/releases/download/v%{consulkv_version}/consulkv_%{consulkv_version}_linux_amd64.tar.gz
+Source0:	https://github.com/CiscoCloud/consul-cli/releases/download/v%{consul_cli_version}/consul-cli_%{consul_cli_version}_linux_amd64.tar.gz
 
 %description
 Command line tools for Consul
 
 %prep
-%setup -T -b 0 -n consulacl_%{consulacl_version}_linux_amd64
-%setup -T -b 1 -n consulkv_%{consulkv_version}_linux_amd64
+%setup -T -b 0 -n consul-cli_%{consulacl_version}_linux_amd64
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-cp consulkv %{buildroot}/%{_bindir}
-cd ../consulacl_%{consulacl_version}_linux_amd64
-cp consulacl %{buildroot}/%{_bindir}
+cd ../consul-cli_%{consul_cli_version}_linux_amd64
+cp consul-cli %{buildroot}/%{_bindir}
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root, -)
-%attr(755, root, root) %{_bindir}/consulkv
-%attr(755, root, root) %{_bindir}/consulacl
+%attr(755, root, root) %{_bindir}/consul-cli
