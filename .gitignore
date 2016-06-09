@@ -1,6 +1,0 @@
-.vagrant/*
-BUILD/*
-RPMS/*
-SRPMS/*
-SOURCES/*.zip
-*.rpm
