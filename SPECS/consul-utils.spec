@@ -1,9 +1,9 @@
 Name:		consul-utils
-Version:	0.1.0
+Version:	0.3.1
 Release:	1%{?dist}
 Summary:	Command line tools for Consul
 
-%global consul_cli_version 0.1.0
+%global consul_cli_version 0.3.1
 
 Group:		Applications/System
 License:	ASL 2.0
@@ -13,7 +13,7 @@ Source0:	https://github.com/CiscoCloud/consul-cli/releases/download/v%{consul_cl
 Command line tools for Consul
 
 %prep
-%setup -T -b 0 -n consul-cli_%{consulacl_version}_linux_amd64
+%setup -T -b 0 -n consul-cli_%{consul_cli_version}_linux_amd64
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
@@ -26,3 +26,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-, root, root, -)
 %attr(755, root, root) %{_bindir}/consul-cli
+
+%changelog
+* Tue Aug 30 2016 Jan <jkapellen@gmail.com>
+* fixed old consulacl var and updated to latest release
