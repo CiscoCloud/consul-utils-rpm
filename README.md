@@ -1,7 +1,7 @@
 # RPM Spec for Consul utilities
 
-This will create an RPM for https://github.com/CiscoCloud/consul-utils-rpm.
+This will create an RPM for https://github.com/CiscoCloud/consul-cli
 
-It is a dependency for vault on consul, so you can unlock properly.
+This package is a dependency for the vault rpm you can build with https://github.com/CiscoCloud/vault-rpm 
 
-To build vault as an RPM go here https://github.com/CiscoCloud/vault-rpm 
+For more informations on Vault or Consul, please visit the Hashicorp website https://www.hashicorp.com/.
