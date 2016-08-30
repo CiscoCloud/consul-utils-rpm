@@ -1,9 +1,9 @@
 Name:		consul-utils
-Version:	0.1.0
+Version:	0.3.1
 Release:	1%{?dist}
 Summary:	Command line tools for Consul
 
-%global consul_cli_version 0.1.0
+%global consul_cli_version 0.3.1
 
 Group:		Applications/System
 License:	ASL 2.0
